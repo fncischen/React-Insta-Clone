@@ -22,6 +22,10 @@ class PostContainer extends Component {
         // to a format you can work with. 
         this.data = this.props.data; 
 
+
+        this.username = this.data.username;
+        this.thumbnail = this.data.thumbnailUrl;
+        this.image = this.data.imageUrl;
         // blocker 2) using propstype to ensure type safety. 
 
         // state data that will change include
@@ -51,7 +55,7 @@ class PostContainer extends Component {
 
             <div className="post-container">
 
-                <img src="{this.image}"/>
+                <img src={this.image}/>
 
                 <div className="icons-section">
                 
