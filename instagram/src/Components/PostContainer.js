@@ -18,13 +18,11 @@ class PostContainer extends Component {
 
             // post description
 
-        // blocker 1) formatting or refactoring JSON - like data from something yo
+        // blocker 1) formatting or refactoring JSON - like data from something you
+        // to a format you can work with. 
         this.data = this.props.data; 
 
         // blocker 2) using propstype to ensure type safety. 
-
-
-        this.description = this.props.description;
 
         // state data that will change include
         
@@ -34,7 +32,7 @@ class PostContainer extends Component {
 
         this.state = {
             // note : always think about the most optimal way to structure this data. 
-            comments: this.props.comments, 
+            comments: [], 
             commentAmount: 0,
             likeAmount: 0,
             // calcuate the timestamp using a method

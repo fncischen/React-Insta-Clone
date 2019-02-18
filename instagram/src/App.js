@@ -6,16 +6,15 @@ import './App.css';
 import PostContainer from './Components/PostContainer';
 import SearchBarHeader from "./Components/Search";
 
-//
-import dummyData from '.././dummy-data';
+// import dummyData
+import dummyData from './dummy-data';
 
 class App extends Component {
   render() {
 
     return (
       <div className="instagram-clone">
-        <SearchBarHeader />
-        <PostContainer data={dummyData}/>
+        <PostContainer data={dummyData} />
       </div>
     );
   }
