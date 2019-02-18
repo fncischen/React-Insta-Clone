@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const Comment = props => {
-    return ;
+    return <div className="comment"><b>{props.posterName}:</b>{props.commented}</div>;
 }
 
 

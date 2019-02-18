@@ -70,7 +70,7 @@ class PostContainer extends Component {
                 <div className = "comments-section">
 
                     {this.state.comments.map(comment => 
-                        <Comment data={comment} />
+                        <Comment posterName={this.name} data={comment} />
                     )}
 
                 </div>
