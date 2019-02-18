@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Comment from "./Comment";
-import addComment from './AddComment';
+import AddComment from './AddComment';
 
 class PostContainer extends Component {
 
@@ -57,9 +57,9 @@ class PostContainer extends Component {
                 
                     <div className="icons">
                      
-                     <div className="heart"> ♡ </div>
+                        <div className="heart"> ♡ </div>
 
-                    <div className="add-comment-logo">✍</div>
+                        <div className="add-comment-logo">✍</div>
 
                     </div>
 
@@ -75,9 +75,6 @@ class PostContainer extends Component {
 
                 </div>
                 
-                {this.state.timeStamp}
-
-                <addComment/>
 
             </div> 
 
