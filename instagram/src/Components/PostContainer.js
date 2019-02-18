@@ -4,10 +4,6 @@ import PropTypes from 'prop-types';
 import Comment from "./Comment";
 import AddComment from './AddComment';
 
-// dummy data 
-
-import dummyData from './dummy-data';
-
 class PostContainer extends Component {
 
         
@@ -22,9 +18,11 @@ class PostContainer extends Component {
 
             // post description
 
-        this.image = this.props.image;
-        this.logo = this.props.logo;
-        this.name = this.props.name; 
+        // blocker 1) formatting or refactoring JSON - like data from something yo
+        this.data = this.props.data; 
+
+        // blocker 2) using propstype to ensure type safety. 
+
 
         this.description = this.props.description;
 

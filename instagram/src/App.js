@@ -6,6 +6,8 @@ import './App.css';
 import PostContainer from './Components/PostContainer';
 import SearchBarHeader from "./Components/Search";
 
+//
+import dummyData from '.././dummy-data';
 
 class App extends Component {
   render() {
@@ -13,7 +15,7 @@ class App extends Component {
     return (
       <div className="instagram-clone">
         <SearchBarHeader />
-        <PostContainer/>
+        <PostContainer data={dummyData}/>
       </div>
     );
   }
