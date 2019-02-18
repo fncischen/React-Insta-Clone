@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Comnment from "./Comment";
 
 class PostContainer extends Component {
 
@@ -14,6 +15,12 @@ class PostContainer extends Component {
 
             // post description
 
+        this.image = this.props.image;
+        this.logo = this.props.logo;
+        this.name = this.props.name; 
+
+        this.description = this.props.description;
+
         // state data that will change include
         
             // amount of comments
@@ -22,7 +29,7 @@ class PostContainer extends Component {
 
         this.state = {
             // note : always think about the most optimal way to structure this data. 
-
+            comments: this.props.comments, 
             commentAmount: 0,
             likeAmount: 0,
             timeStamp: ""
@@ -30,9 +37,40 @@ class PostContainer extends Component {
 
     }
 
-        render() {
+
+
+    render() {
              
+            return (
+
+            <div className="post-container">
             
-        }
+                <div className="icons-section">
+                
+                    <div className="icons">
+                     
+                     <div className="heart"> ♡ </div>
+
+                    <div className="add-comment-logo">✍</div>
+
+                    </div>
+
+                    <B>{this.state.likeAmount} likes</B>
+
+                </div>
+
+                <div className = "comments-section">
+
+                    {this.state.comments.map(comment => 
+                        <Comment data={comment} />
+                    )}
+
+                </div>
+
+            </div> 
+
+            );
+            
+    }
     
 }
