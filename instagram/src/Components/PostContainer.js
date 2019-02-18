@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Comnment from "./Comment";
+import addComment from './AddComment';
 
 class PostContainer extends Component {
 
@@ -66,6 +67,8 @@ class PostContainer extends Component {
                     )}
 
                 </div>
+
+                <addComment
 
             </div> 
 
