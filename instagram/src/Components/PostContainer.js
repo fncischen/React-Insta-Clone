@@ -33,6 +33,7 @@ class PostContainer extends Component {
             comments: this.props.comments, 
             commentAmount: 0,
             likeAmount: 0,
+            // calcuate the timestamp using a method
             timeStamp: ""
         }
 
@@ -67,8 +68,10 @@ class PostContainer extends Component {
                     )}
 
                 </div>
+                
+                {this.state.timeStamp}
 
-                <addComment
+                <addComment/>
 
             </div> 
 
