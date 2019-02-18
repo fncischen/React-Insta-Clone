@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import Comnment from "./Comment";
 import addComment from './AddComment';
 
@@ -39,7 +41,11 @@ class PostContainer extends Component {
 
     }
 
+    // call back method ("the controller") that event handler in AddComment Component calls to add an additional
+    // comment component (using this.setState) 
+    addComment() {
 
+    }
 
     render() {
              
