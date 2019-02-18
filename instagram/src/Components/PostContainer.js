@@ -32,11 +32,9 @@ class PostContainer extends Component {
 
         this.state = {
             // note : always think about the most optimal way to structure this data. 
-            comments: [], 
-            commentAmount: 0,
-            likeAmount: 0,
-            // calcuate the timestamp using a method
-            timeStamp: ""
+            comments: this.data.comments,
+            likeAmount: this.data.likes,
+            timeStamp: this.data.timestamp
         }
 
     }
@@ -52,7 +50,9 @@ class PostContainer extends Component {
             return (
 
             <div className="post-container">
-            
+
+                <img src="{this.image}"/>
+
                 <div className="icons-section">
                 
                     <div className="icons">
@@ -72,7 +72,7 @@ class PostContainer extends Component {
                     { // put prop types check here
                         
                         this.state.comments.map(comment => 
-                        <Comment posterName={this.name} commented={comment} />
+                        <Comment posterName={comment.username} commented={comment.text} />
                     )}
 
                 </div>

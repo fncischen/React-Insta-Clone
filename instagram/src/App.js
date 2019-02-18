@@ -14,7 +14,7 @@ class App extends Component {
 
     return (
       <div className="instagram-clone">
-        <PostContainer data={dummyData} />
+        <PostContainer data={dummyData[0]} />
       </div>
     );
   }
