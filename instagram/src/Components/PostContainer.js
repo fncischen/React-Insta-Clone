@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Comnment from "./Comment";
+import Comment from "./Comment";
 import addComment from './AddComment';
 
 class PostContainer extends Component {
@@ -63,14 +63,14 @@ class PostContainer extends Component {
 
                     </div>
 
-                    <B>{this.state.likeAmount} likes</B>
+                    <b>{this.state.likeAmount} likes</b>
 
                 </div>
 
                 <div className = "comments-section">
 
                     {this.state.comments.map(comment => 
-                        <Comment posterName={this.name} data={comment} />
+                        <Comment posterName={this.name} commented={comment} />
                     )}
 
                 </div>
@@ -86,3 +86,5 @@ class PostContainer extends Component {
     }
     
 }
+
+export default PostContainer;
