@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import Comment from "./Comment";
 import AddComment from './AddComment';
 
+// dummy data 
+
+import dummyData from './dummy-data';
+
 class PostContainer extends Component {
 
         
@@ -69,7 +73,9 @@ class PostContainer extends Component {
 
                 <div className = "comments-section">
 
-                    {this.state.comments.map(comment => 
+                    { // put prop types check here
+                        
+                        this.state.comments.map(comment => 
                         <Comment posterName={this.name} commented={comment} />
                     )}
 

@@ -9,10 +9,11 @@ import SearchBarHeader from "./Components/Search";
 
 class App extends Component {
   render() {
+
     return (
       <div className="instagram-clone">
         <SearchBarHeader />
-        <PostContainer image={} logo={} name={}/>
+        <PostContainer/>
       </div>
     );
   }
