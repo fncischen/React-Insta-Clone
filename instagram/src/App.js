@@ -11,8 +11,8 @@ class App extends Component {
   render() {
     return (
       <div className="instagram-clone">
-        <SearchBarHeader/>
-        <PostContainer/>
+        <SearchBarHeader />
+        <PostContainer image={} logo={} name={}/>
       </div>
     );
   }

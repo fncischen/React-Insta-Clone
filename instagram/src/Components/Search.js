@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 class SearchBarHeader extends Component {
     constructor(props){
+        super(props);
 
         this.state = {
             search_text: ""
@@ -19,7 +20,7 @@ class SearchBarHeader extends Component {
         return (
             <div className="search-bar-header">
             
-                <input type="text" name="fname" value={this.state.search_text}></input>
+               
 
             </div>
         );
