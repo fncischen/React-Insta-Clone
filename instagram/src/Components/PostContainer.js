@@ -17,14 +17,15 @@ class PostContainer extends Component {
         // state data that will change include
         
             // amount of comments
-            // like button / comment button 
-
             // amount of likes 
-            
-            // status of recent comment 
+            // timestamp of post
 
         this.state = {
+            // note : always think about the most optimal way to structure this data. 
 
+            commentAmount: 0,
+            likeAmount: 0,
+            timeStamp: ""
         }
 
     }
