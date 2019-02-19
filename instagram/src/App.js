@@ -7,8 +7,6 @@ import "./PostContainer.css";
 import "./Comments.css";
 import "./SearchBoxHeader.css";
 
-
-
 // import main components
 import PostContainer from './Components/PostContainer';
 import SearchBarHeader from "./Components/Search";
@@ -21,25 +19,18 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    console.log(dummyData);
     this.state = {
-      instagram_data: null
+      data: []
     }
 
   }
 
-  // how to fetch data 
-  // https://www.robinwieruch.de/react-fetching-data/
-  componentDidMount() {
-    fetch('./dummy-data.js')
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      this.setState({ instagram_data: data.dummyData });
-    })
-    .catch(err => {
-      throw new Error(err);
-    });
+  componentWillMount() {
+    console.log("CDM Running!");
+    this.setState(
+      {data: dummyData}
+      );
   }
 
   render() {
@@ -47,7 +38,9 @@ class App extends Component {
     return (
       <div className="instagram-clone">
         <SearchBarHeader />
-        <PostContainer data={dummyData[0]} />
+        <PostContainer data={this.state.data[0]} />
+        <PostContainer data={this.state.data[1]} />
+        <PostContainer data={this.state.data[2]} />
       </div>
     );
   }
