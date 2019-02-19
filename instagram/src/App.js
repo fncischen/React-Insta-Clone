@@ -18,9 +18,28 @@ import dummyData from './dummy-data';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      instagram_data: null
+    }
+
+  }
+
+  // how to fetch data 
   // https://www.robinwieruch.de/react-fetching-data/
   componentDidMount() {
-
+    fetch('./dummy-data.js')
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      this.setState({ instagram_data: data.dummyData });
+    })
+    .catch(err => {
+      throw new Error(err);
+    });
   }
 
   render() {
