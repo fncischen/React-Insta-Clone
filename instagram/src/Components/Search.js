@@ -20,7 +20,7 @@ class SearchBarHeader extends Component {
         return (
             <div className="search-bar-header">
             
-               
+            <input type="search" className="site-search" name="q" aria-label="Search for users, hashtags, or posts" />
 
             </div>
         );

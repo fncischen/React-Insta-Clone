@@ -17,10 +17,17 @@ import SearchBarHeader from "./Components/Search";
 import dummyData from './dummy-data';
 
 class App extends Component {
+
+  // https://www.robinwieruch.de/react-fetching-data/
+  componentDidMount() {
+
+  }
+
   render() {
 
     return (
       <div className="instagram-clone">
+        <SearchBarHeader />
         <PostContainer data={dummyData[0]} />
       </div>
     );
