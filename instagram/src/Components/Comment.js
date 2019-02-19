@@ -9,7 +9,12 @@ const Comment = props => {
 // https://labnotes.panderalabs.com/shaping-up-your-react-components-with-proptypes-shape-and-selectors-9d1111d0566f
 
 Comment.propTypes = {
-    isName = props.posterName.
-}
+    commentObject: PropTypes.shape({
+        posterName: PropTypes.string,
+        commented: PropTypes.string
+    })
+};
+
+console.log(Comment.propTypes);
 
 export default Comment; 

@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+
 import './App.css';
+import './index.css';
+import "./PostContainer.css";
+import "./Comments.css";
+import "./SearchBoxHeader.css";
+
+
 
 // import main components
 import PostContainer from './Components/PostContainer';
