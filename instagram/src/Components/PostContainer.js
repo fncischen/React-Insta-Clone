@@ -90,4 +90,12 @@ class PostContainer extends Component {
     
 }
 
+PostContainer.propTypes = {
+    postObject: PropTypes.shape({
+        username: PropTypes.string,
+        thumbnail: PropTypes.string,
+        image: PropTypes.string
+    })
+};
+
 export default PostContainer;
