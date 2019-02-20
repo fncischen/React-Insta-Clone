@@ -19,38 +19,38 @@ class CommentSection extends Component {
         })
     }
 
-    addLike = e => {
-        if (this.state.liked == false) {
-            this.setState({
-                likeAmount: likeAmount + 1,
-                liked: true
-            })
-        }
-        else {
-            this.setState({
-                likeAmount: likeAmount - 1,
-                liked: false
-            })
-        }
-    }
+    // addLike = e => {
+    //     if (this.state.liked == false) {
+    //         this.setState({
+    //             likeAmount: likeAmount + 1,
+    //             liked: true
+    //         })
+    //     }
+    //     else {
+    //         this.setState({
+    //             likeAmount: likeAmount - 1,
+    //             liked: false
+    //         })
+    //     }
+    // }
 
-    addComment = e => {
+    // addComment = e => {
 
-        e.preventDefault();
+    //     e.preventDefault();
 
-        // use spread operator 
-        this.setState({
-            comments: [... comments, new_comment ]
-        })
-    }
+    //     // use spread operator 
+    //     this.setState({
+    //         comments: [... comments, new_comment ]
+    //     })
+    // }
 
-    handleChanges = e => {
-        console.log(e.target.value);
-        //     this.setState({ name: e.target.value })
-        this.setState({
-          new_comment: e.target.value
-    })
-    };
+    // handleChanges = e => {
+    //     console.log(e.target.value);
+    //     //     this.setState({ name: e.target.value })
+    //     this.setState({
+    //       new_comment: e.target.value
+    // })
+    // };
 
 
     // https://reactjs.org/docs/forms.html
@@ -62,7 +62,7 @@ class CommentSection extends Component {
                     
                     <div className="icons">
                     
-                        <div className="heart" onClick={addLike}> ♡ </div>
+                        <div className="heart"> ♡ </div>
 
                         <div className="add-comment-logo">✍</div>
 
@@ -77,7 +77,7 @@ class CommentSection extends Component {
             )}
 
             <form>
-            <input type="submit" maxLength="1000" onChange={handleChanges}></input>
+            <input type="submit" maxLength="1000"></input>
             </form>
             </div>
         );

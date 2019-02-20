@@ -29,20 +29,6 @@ class PostContainer extends Component {
                 <div className="post-container">
     
                     <img src={this.props.data.imageUrl}/>
-    
-                        <div className="icons-section">
-                    
-                            <div className="icons">
-                            
-                                <div className="heart"> ♡ </div>
-        
-                                <div className="add-comment-logo">✍</div>
-        
-                            </div>
-    
-                            {<b>{this.state.likeAmount} likes</b>}
-    
-                        </div>
 
                     <CommentSection comments={this.state.comments} />
     
@@ -61,5 +47,7 @@ PostContainer.propTypes = {
         imageUrl: PropTypes.object
     })
 };
+
+const PostPage = {}
 
 export default PostContainer;
