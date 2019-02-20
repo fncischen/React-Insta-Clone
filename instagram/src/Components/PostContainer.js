@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import CommentSection from "./CommentSection";
+import CommentSection from "./CommentSection.js";
 
 class PostContainer extends Component {
 

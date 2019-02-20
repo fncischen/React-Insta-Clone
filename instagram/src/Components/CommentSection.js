@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Comment from "./Comment";
 
-class CommentSection extends Components {
+class CommentSection extends Component {
 
     constructor(props) {
         super(props);
@@ -11,7 +11,7 @@ class CommentSection extends Components {
     render() {
         return (
             <div className="comment-section">
-            {props.comments.map(comment => 
+            {this.props.comments.map(comment => 
                 <Comment posterName={comment.username} commented={comment.text} />
             )}
             </div>
