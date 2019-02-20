@@ -10,16 +10,12 @@ class PostContainer extends Component {
         super(props);
 
 
-        if (this.props.data != undefined) {
-
-            this.state = {
+        this.state = {
                 // note : always think about the most optimal way to structure this data. 
                   comments: this.props.data.comments,
                   likeAmount: this.props.data.likes,
                   timeStamp: this.props.data.timestamp,
                   liked: false 
-            }
-
         }
 
     }
@@ -29,16 +25,7 @@ class PostContainer extends Component {
 
     render() {
 
-        if (this.props.data == undefined) {
-            return (
-                <div className="post-container">
-                </div> 
-            );
-        }
-
-        else {
-
-            return (
+        return (
 
                 <div className="post-container">
     
@@ -69,8 +56,6 @@ class PostContainer extends Component {
                 </div> 
                 );
                 
-        }
-
         }   
         
 
