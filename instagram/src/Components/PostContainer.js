@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Comment from "./Comment";
-import AddComment from './AddComment';
+import CommentSection from "./CommentSection";
 
 class PostContainer extends Component {
 
@@ -33,28 +32,22 @@ class PostContainer extends Component {
     
                         <div className="icons-section">
                     
-                         <div className="icons">
-                         
-                             <div className="heart"> ♡ </div>
-    
-                             <div className="add-comment-logo">✍</div>
-    
-                        </div>
-    
-                         {<b>{this.state.likeAmount} likes</b>}
-    
-                        </div>
-    
-                    <div className = "comments-section">
+                            <div className="icons">
                             
-                           {this.state.comments.map(comment => 
-                           <Comment posterName={comment.username} commented={comment.text} />
-                           )}
+                                <div className="heart"> ♡ </div>
+        
+                                <div className="add-comment-logo">✍</div>
+        
+                            </div>
     
-                    </div>
+                            {<b>{this.state.likeAmount} likes</b>}
+    
+                        </div>
+
+                    <CommentSection comments={this.state.comments} />
     
                 </div> 
-                );
+            );
                 
         }   
         
