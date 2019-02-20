@@ -15,6 +15,5 @@ Comment.propTypes = {
     })
 };
 
-console.log(Comment.propTypes);
 
 export default Comment; 
