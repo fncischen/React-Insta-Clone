@@ -54,7 +54,7 @@ class PostContainer extends Component {
     
                         </div>
     
-                         {/* <b>{this.state.likeAmount} likes</b> */}
+                         {<b>{this.state.likeAmount} likes</b>}
     
                         </div>
     

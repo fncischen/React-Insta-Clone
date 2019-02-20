@@ -50,7 +50,9 @@ class App extends Component {
     return (
       <div className="instagram-clone">
         <SearchBarHeader />
-        {this.state.data.map()}
+        {this.state.instagramPosts.map(InstagramPost =>
+          <PostContainer data={InstagramPost}/>
+        )}
       </div>
     );
 
