@@ -8,8 +8,8 @@ class CommentSection extends Component {
         super(props);
     
         this.state = {
-            comments: []
-
+            comments: [],
+            new_comment: ""
         }
     }
 
@@ -19,12 +19,28 @@ class CommentSection extends Component {
         })
     }
 
+    addLike = e => {
+        if (this.state.liked == false) {
+            this.setState({
+                likeAmount: likeAmount + 1,
+                liked: true
+            })
+        }
+        else {
+            this.setState({
+                likeAmount: likeAmount - 1,
+                liked: false
+            })
+        }
+    }
+
     addComment = e => {
 
         e.preventDefault();
 
+        // use spread operator 
         this.setState({
-            comments: [..comments ]
+            comments: [... comments, new_comment ]
         })
     }
 
@@ -32,7 +48,7 @@ class CommentSection extends Component {
         console.log(e.target.value);
         //     this.setState({ name: e.target.value })
         this.setState({
-          [e.target.name]: e.target.value
+          new_comment: e.target.value
     })
     };
 
@@ -41,6 +57,21 @@ class CommentSection extends Component {
     render() {
         return (
             <div className="comment-section">
+
+                <div className="icons-section">
+                    
+                    <div className="icons">
+                    
+                        <div className="heart" onClick={addLike}> ♡ </div>
+
+                        <div className="add-comment-logo">✍</div>
+
+                    </div>
+
+                    {<b>{this.state.likeAmount} likes</b>}
+
+                </div>
+
             {this.state.comments.map(comment => 
                 <Comment posterName={comment.username} commented={comment.text} />
             )}
