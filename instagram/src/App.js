@@ -9,6 +9,7 @@ import "./SearchBoxHeader.css";
 
 // import main components
 import PostContainer from './Components/PostContainer';
+import PostPage from './Components/PostContainer';
 import SearchBarHeader from "./Components/Search";
 
 // import dummyData
@@ -50,9 +51,12 @@ class App extends Component {
     return (
       <div className="instagram-clone">
         <SearchBarHeader />
-        {this.state.instagramPosts.map(InstagramPost =>
+        {/* {this.state.instagramPosts.map(InstagramPost =>
           <PostContainer data={InstagramPost}/>
-        )}
+        )} */}
+
+        <PostPage />
+        
       </div>
     );
 

@@ -48,6 +48,13 @@ PostContainer.propTypes = {
     })
 };
 
-const PostPage = {}
+const PostPage = props => {
+    return(
+        
+        <div className="Post-Page">
+        
+        </div>
+    )
+}
 
 export default PostContainer;
