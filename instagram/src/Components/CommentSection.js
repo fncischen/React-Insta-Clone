@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import styled from "styled-components";
 
 import PropTypes from 'prop-types';
@@ -85,8 +86,8 @@ class CommentSection extends Component {
                 <Comment posterName={comment.username} commented={comment.text} />
             )}
 
-            <form onSubmit={this.addComment}>
-            <input type="text" maxLength="2000" onChange={this.handleChanges}></input>
+            <form>
+            <Input type="textarea" onChange={this.handleChanges} onSubmit={this.addComment}/>
             </form>
             </div>
         );
