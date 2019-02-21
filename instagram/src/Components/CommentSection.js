@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import styled from "styled-components";
+
 import PropTypes from 'prop-types';
 import Comment from "./Comment";
+
 
 class CommentSection extends Component {
 
@@ -9,7 +12,9 @@ class CommentSection extends Component {
     
         this.state = {
             comments: [],
-            new_comment: ""
+            new_comment: "",
+            likes: this.props.likes,
+            liked: false
         }
     }
 
@@ -19,38 +24,42 @@ class CommentSection extends Component {
         })
     }
 
-    // addLike = e => {
-    //     if (this.state.liked == false) {
-    //         this.setState({
-    //             likeAmount: likeAmount + 1,
-    //             liked: true
-    //         })
-    //     }
-    //     else {
-    //         this.setState({
-    //             likeAmount: likeAmount - 1,
-    //             liked: false
-    //         })
-    //     }
-    // }
+    addLike = e => {
+        if (this.state.liked == false) {
+            this.setState({
+                likes: this.state.likes + 1,
+                liked: true
+            })
+        }
+        else {
+            this.setState({
+                likes: this.state.likes - 1,
+                liked: false
+            })
+        }
+    }
 
-    // addComment = e => {
+    addComment = e => {
 
-    //     e.preventDefault();
+        e.preventDefault();
 
-    //     // use spread operator 
-    //     this.setState({
-    //         comments: [... comments, new_comment ]
-    //     })
-    // }
+        const newComment = {
+            username: "dummy_user",
+            text: this.state.new_comment
+        }
+        // use spread operator 
+        this.setState({
+            comments: [... this.state.comments, newComment ]
+        })
+    }
 
-    // handleChanges = e => {
-    //     console.log(e.target.value);
-    //     //     this.setState({ name: e.target.value })
-    //     this.setState({
-    //       new_comment: e.target.value
-    // })
-    // };
+    handleChanges = e => {
+        console.log(e.target.value);
+        //     this.setState({ name: e.target.value })
+        this.setState({
+          new_comment: e.target.value
+    })
+    };
 
 
     // https://reactjs.org/docs/forms.html
@@ -62,13 +71,13 @@ class CommentSection extends Component {
                     
                     <div className="icons">
                     
-                        <div className="heart"> ♡ </div>
+                        <div className="heart" onClick={this.addLike}> ♡ </div>
 
                         <div className="add-comment-logo">✍</div>
 
                     </div>
 
-                    {<b>{this.state.likeAmount} likes</b>}
+                    {<b>{this.state.likes} likes</b>}
 
                 </div>
 
@@ -76,8 +85,8 @@ class CommentSection extends Component {
                 <Comment posterName={comment.username} commented={comment.text} />
             )}
 
-            <form>
-            <input type="submit" maxLength="1000"></input>
+            <form onSubmit={this.addComment}>
+            <input type="text" maxLength="2000" onChange={this.handleChanges}></input>
             </form>
             </div>
         );

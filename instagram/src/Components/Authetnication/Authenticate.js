@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 // https://blog.bitsrc.io/understanding-currying-in-javascript-ceb2188c339
 
 
-
 function Authenticate (App, LogIn){  
     return class extends React.Component {
     // leverage conditional rendering 

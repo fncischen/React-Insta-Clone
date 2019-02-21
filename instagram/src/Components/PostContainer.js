@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
+import styled from "styled-components";
+
 import PropTypes from 'prop-types';
+
 
 import CommentSection from "./CommentSection.js";
 import SearchBarHeader from "./Search";
 
-import styled from "styled-components";
 
-const styledPostContainer = styled.div`
+const StyledPostContainer = styled.div`
+    display: flex;
+    flex-direction: column;
 
-
+    margin: 0 auto;
+    width: 750px;
 `;
 
 class PostContainer extends Component {
@@ -34,14 +39,15 @@ class PostContainer extends Component {
     render() {
 
         return (
-
-                <div className="post-container">
+            // <div className="post-container">
+                <StyledPostContainer>
     
                      <img src={this.props.data.imageUrl}/>
 
-                    <CommentSection comments={this.state.comments} />
+                    <CommentSection comments={this.state.comments} likes={this.state.likeAmount}/>
     
-                </div> 
+                </StyledPostContainer>
+            // </div>
             );
                 
         }   

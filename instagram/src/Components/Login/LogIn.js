@@ -1,5 +1,35 @@
 import React, { Component } from 'react';
+import styled from "styled-components";
+
 import PropTypes from 'prop-types';
+import instagramLogo from "./../../Img/instagramLogo.png"
+
+const Styledloginbox = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    background-color: #A9A9A9;
+
+    width: 300px;
+    margin: 10% auto;
+
+    justify-content: center;
+
+    input {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    img {
+        width: 300px;
+    }
+
+    button {
+        margin-top: 15px;
+    }
+
+`;
 
 class LogIn extends Component {
 
@@ -29,7 +59,9 @@ class LogIn extends Component {
         console.log("Logged in!");
 
         return (
-            <div className = "LogInBox">
+            <Styledloginbox>
+
+            <img src={instagramLogo}></img>
 
             <input
             type="text"
@@ -49,7 +81,7 @@ class LogIn extends Component {
 
             <button onClick={this.logIn}>Sign in</button>
 
-            </div>
+            </Styledloginbox>
         )
     }
 }
