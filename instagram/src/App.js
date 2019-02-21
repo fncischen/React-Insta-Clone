@@ -15,39 +15,23 @@ import PostPage from './Components/PostPage';
 import Authenticate from "./Components/Authetnication/Authenticate";
 
 // import LogIn 
-import LogIn from "./Components/Login"; 
+import LogIn from "./Components/Login/LogIn"; 
 
 // import dummyData
 import dummyData from "./dummy-data";
-
+ 
+// where to declare HOC
+const HOC = Authenticate(PostPage, LogIn);
 
 class App extends Component {
-
-  constructor() {
-    super();
-
-    this.state = {
-      instagramPosts: []
-    };
-
-}
-
-  componentDidMount() {
-     console.log("CDM Running!");
-     this.setState( {instagramPosts: dummyData});
-     console.log("inside PostPage",this.state.instagramPosts);
-  }
 
   render() {
 
     return (
       <div className="instagram-clone">
-        {/* {this.state.instagramPosts.map(InstagramPost =>
-          <PostContainer data={InstagramPost}/>
-        )} */}
 
-        {Authenticate(<PostPage instagramPosts={this.state.instagramPosts}/>)(LogIn)}
-        
+        <HOC />
+
       </div>
     );
 

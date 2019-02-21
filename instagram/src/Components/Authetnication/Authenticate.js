@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 
 
 
-const Authenticate = App => LogIn =>  {
-    class extends React.Component {
+function Authenticate (App, LogIn){  
+    return class extends React.Component {
     // leverage conditional rendering 
     // https://reactjs.org/docs/conditional-rendering.html
     constructor() {
@@ -26,14 +26,29 @@ const Authenticate = App => LogIn =>  {
     }
 
     render() {
-        if (loggedIn) {
+        console.log("Time to render");
+        if (this.state.loggedIn) {
+            console.log("Render app!");
             return <App/>
         }
         else {
+            console.log("Render log in page!");
             return <LogIn/>
         }
     }
 }
 }
+
+
+// function Authenticate(App) {
+//     console.log(App);
+//   return class extends React.Component {
+//     render() {
+//       return (
+//           <App />
+//       );
+//     }
+//   };
+// }
 
 export default Authenticate;

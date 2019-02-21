@@ -2,7 +2,23 @@ import React, { Component } from 'react';
 import SearchBarHeader from "./Search";
 import PostContainer from './PostContainer';
 
+import dummyData from "./dummy-data.js";
+
 class PostPage extends Component {
+
+    constructor() {
+        super();
+    
+        this.state = {
+          instagramPosts: []
+        };
+    }
+
+    componentDidMount() {
+        console.log("CDM Running!");
+        this.setState( {instagramPosts: dummyData});
+        console.log("inside PostPage",this.state.instagramPosts);
+     }
 
     render() {
 
@@ -12,7 +28,7 @@ class PostPage extends Component {
         
             <div className="Post-Page">
                 <SearchBarHeader />
-                 {this.props.instagramPosts.map(InstagramPost =>
+                 {this.state.instagramPosts.map(InstagramPost =>
                  <PostContainer data={InstagramPost}/>
                  )}   
             </div>

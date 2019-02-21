@@ -18,6 +18,8 @@ class LogIn extends Component {
 
     render() {
 
+        console.log("Logged in!");
+
         return (
             <div className = "LogInBox">
 
