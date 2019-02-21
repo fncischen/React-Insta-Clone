@@ -9,12 +9,28 @@ import "./SearchBoxHeader.css";
 
 // import main components
 import PostContainer from './Components/PostContainer';
-import PostPage from './Components/PostContainer';
+import PostPage from './Components/PostPage';
 import SearchBarHeader from "./Components/Search";
 
+// import dummyData
+import dummyData from "./dummy-data";
 
 class App extends Component {
 
+  constructor() {
+    super();
+
+    this.state = {
+      instagramPosts: []
+    };
+
+}
+
+  componentDidMount() {
+     console.log("CDM Running!");
+     this.setState( {instagramPosts: dummyData});
+     console.log("inside PostPage",this.state.instagramPosts);
+  }
 
   render() {
 
@@ -24,7 +40,7 @@ class App extends Component {
           <PostContainer data={InstagramPost}/>
         )} */}
 
-        <PostPage />
+        <PostPage instagramPosts={this.state.instagramPosts}/>
         
       </div>
     );
