@@ -10,10 +10,16 @@ import "./SearchBoxHeader.css";
 // import main components
 import PostContainer from './Components/PostContainer';
 import PostPage from './Components/PostPage';
-import SearchBarHeader from "./Components/Search";
+
+// import authentiticate HOC which has conditional rendering
+import Authenticate from "./Components/Authetnication/Authenticate";
+
+// import LogIn 
+import LogIn from "./Components/Login"; 
 
 // import dummyData
 import dummyData from "./dummy-data";
+
 
 class App extends Component {
 
@@ -40,7 +46,7 @@ class App extends Component {
           <PostContainer data={InstagramPost}/>
         )} */}
 
-        <PostPage instagramPosts={this.state.instagramPosts}/>
+        {Authenticate(<PostPage instagramPosts={this.state.instagramPosts}/>)(LogIn)}
         
       </div>
     );
