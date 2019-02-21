@@ -6,6 +6,7 @@ import './index.css';
 import "./PostContainer.css";
 import "./Comments.css";
 import "./SearchBoxHeader.css";
+import "./LogIn.css";
 
 // import main components
 import PostContainer from './Components/PostContainer';

@@ -5,9 +5,17 @@ class LogIn extends Component {
 
     constructor(props) {
         super(props)
+
+        this.state = {
+            username: "",
+            password: ""
+        }
     }
 
-    handleChanges = e => this.setState({ [e.target.name]: e.target.value });
+    handleChanges = e => {
+        console.log(e.target.value);
+        this.setState({ [e.target.name]: e.target.value });
+    }
 
     logIn = e => {
         e.preventDefault();
@@ -26,11 +34,15 @@ class LogIn extends Component {
             <input
             type="text"
             value={this.state.username}
+            placeholder= "username"
+            name="username"
             onChange={this.handleChanges}
             />
 
             <input
             type="text"
+            placeholder= "password"
+            name="password"
             value={this.state.password}
             onChange={this.handleChanges}
             />

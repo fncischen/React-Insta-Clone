@@ -32,7 +32,7 @@ class PostContainer extends Component {
     
                      <img src={this.props.data.imageUrl}/>
 
-                    <CommentSection comments={this.state.comments} /> */}
+                    <CommentSection comments={this.state.comments} />
     
                 </div> 
             );
