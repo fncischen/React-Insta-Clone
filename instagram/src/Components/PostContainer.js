@@ -4,6 +4,13 @@ import PropTypes from 'prop-types';
 import CommentSection from "./CommentSection.js";
 import SearchBarHeader from "./Search";
 
+import styled from "styled-components";
+
+const styledPostContainer = styled.div`
+
+
+`;
+
 class PostContainer extends Component {
 
     constructor(props) {
