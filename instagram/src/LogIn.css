@@ -1,0 +1,19 @@
+.LogInBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    width: 300px;
+    margin: 50% auto;
+
+    justify-content: center;
+}
+
+.LogInBox input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.LogInBox button {
+    margin-top: 15px;
+}

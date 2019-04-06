@@ -1,0 +1,16 @@
+.search-bar-header {
+    width: 800px;
+    margin: 0 auto;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+
+.search-bar-header .site-search {
+    text-align: center;
+    height: 20px;
+    align-self: center;
+}
